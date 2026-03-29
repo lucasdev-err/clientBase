@@ -12,7 +12,8 @@ $pdo = null;
 try{
     $pdo = new PDO($dsn, $dbUser, $dbPassword, $options);
 } catch (\PDOException $e){
-    throw new \PDOException($e->getMessage(), (int)$e->getCode());
+    error_log("DB connection error: " . $e->getMessage());
+    die("We're experiencing technical difficulties. Please try again later.");
 }
 
 ?>
