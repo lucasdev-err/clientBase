@@ -1,0 +1,297 @@
+:root {
+    --color-primary: #2563eb;
+    --color-primary-hover: #1d4ed8;
+    --color-edit: #f59e0b;
+    --color-edit-hover: #d97706;
+    --color-delete: #dc2626;
+    --color-delete-hover: #b91c1c;
+    --color-success: #16a34a;
+    --color-success-bg: #f0fdf4;
+    --color-success-border: #bbf7d0;
+    --color-error: #dc2626;
+    --color-error-bg: #fef2f2;
+    --color-error-border: #fecaca;
+    --color-bg: #f3f4f6;
+    --color-card: #ffffff;
+    --color-text: #1f2937;
+    --color-text-muted: #6b7280;
+    --color-border: #e5e7eb;
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    --radius: 8px;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ── Navbar ── */
+
+.navbar {
+    background: var(--color-primary);
+    box-shadow: var(--shadow-md);
+    padding: 0.75rem 1.5rem;
+}
+
+.navbar-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-brand {
+    color: #fff;
+    font-size: 1.35rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+/* ── Container ── */
+
+.container {
+    max-width: 960px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+    flex: 1;
+}
+
+/* ── Typography ── */
+
+h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+/* ── Buttons ── */
+
+.btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: var(--radius);
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    line-height: 1.25;
+    transition: background-color 0.2s;
+    color: #fff;
+}
+
+.btn-primary {
+    background: #fff;
+    color: var(--color-primary);
+}
+
+.btn-primary:hover {
+    background: #e0e7ff;
+}
+
+.btn-edit {
+    background: var(--color-edit);
+}
+
+.btn-edit:hover {
+    background: var(--color-edit-hover);
+}
+
+.btn-delete {
+    background: var(--color-delete);
+}
+
+.btn-delete:hover {
+    background: var(--color-delete-hover);
+}
+
+/* Override for form-contained buttons to use solid primary color */
+form .btn-primary {
+    background: var(--color-primary);
+    color: #fff;
+}
+
+form .btn-primary:hover {
+    background: var(--color-primary-hover);
+}
+
+/* ── Flash Messages ── */
+
+.flash {
+    padding: 0.75rem 1rem;
+    border-radius: var(--radius);
+    border: 1px solid;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.flash--success {
+    color: var(--color-success);
+    background: var(--color-success-bg);
+    border-color: var(--color-success-border);
+}
+
+.flash--error {
+    color: var(--color-error);
+    background: var(--color-error-bg);
+    border-color: var(--color-error-border);
+}
+
+/* ── Table ── */
+
+.table-wrapper {
+    overflow-x: auto;
+    background: var(--color-card);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.875rem;
+}
+
+.table thead {
+    background: var(--color-bg);
+}
+
+.table th {
+    text-align: left;
+    padding: 0.75rem 1rem;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+    border-bottom: 2px solid var(--color-border);
+}
+
+.table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.table tbody tr:hover {
+    background: #f9fafb;
+}
+
+.table-actions {
+    white-space: nowrap;
+}
+
+/* ── Inline form inside table ── */
+
+.inline-form {
+    display: inline;
+}
+
+/* ── Empty State ── */
+
+.empty-state {
+    color: var(--color-text-muted);
+    text-align: center;
+    padding: 3rem 1rem;
+    font-size: 1rem;
+    background: var(--color-card);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+}
+
+/* ── Form ── */
+
+.form {
+    background: var(--color-card);
+    padding: 2rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    max-width: 540px;
+}
+
+.form-group {
+    margin-bottom: 1.25rem;
+}
+
+.form-label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 0.35rem;
+}
+
+.form-input {
+    width: 100%;
+    padding: 0.55rem 0.75rem;
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    font-size: 0.9rem;
+    background: #fff;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.form-error {
+    display: block;
+    margin-top: 0.3rem;
+    font-size: 0.8rem;
+    color: var(--color-error);
+}
+
+/* ── Footer ── */
+
+.footer {
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    border-top: 1px solid var(--color-border);
+    background: var(--color-card);
+}
+
+/* ── Responsive ── */
+
+@media (max-width: 640px) {
+    .navbar-inner {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .container {
+        padding: 0 1rem;
+    }
+
+    .form {
+        padding: 1.25rem;
+    }
+
+    .table th,
+    .table td {
+        padding: 0.5rem 0.65rem;
+    }
+}
